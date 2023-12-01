@@ -44,3 +44,4 @@ function stringsLongerThan(strArr, num) {
     return resultArr;
 }
 console.log(stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3))
+
