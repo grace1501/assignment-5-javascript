@@ -1,6 +1,7 @@
 // ALAB 308.5.1: Creating Reusable Functions
 
 // Part 1: Thinking Functionally
+console.log('Part 1: Thinking Functionally')
 
 function arrSum (numArr) {
     let totalSum = 0;
@@ -45,3 +46,31 @@ function stringsLongerThan(strArr, num) {
 }
 console.log(stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3))
 
+// Part 2: Thinking Methodically
+console.log('Part 2: Thinking Methodically')
+
+const testArr = [
+    { id: "42", name: "Bruce", occupation: "Knight", age: "41" }, 
+    { id: "48", name: "Barry", occupation: "Runner", age: "25" }, 
+    { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" }, 
+    { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" }, 
+    { id: "7", name: "Bilbo", occupation: "None", age: "111" }]
+
+
+// USING BUILT-IN ARRAY METHOD
+console.log('Sort the array by age: ')
+testArr.sort((a,b) => a.age - b.age);
+console.log(testArr);
+
+console.log('Filter the array to remove entries with an age greater than 50.')
+let filteredArr = testArr.filter((a) => a.age <= 50);
+console.log(filteredArr);
+
+// Map the array to change the “occupation” key to “job” and increment every age by 1.
+
+
+// Use the reduce method to calculate the sum of the ages.
+// Then use the result to calculate the average age.
+
+
+// 
