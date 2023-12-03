@@ -99,7 +99,7 @@ function incrementAge(obj){
     else {
         obj.age = 0;
     }
-    
+    // update the time
     obj['update_at'] = new Date();
 
     return obj;
@@ -108,8 +108,25 @@ function incrementAge(obj){
 const bobObj = { name: 'Bob', occupation: 'Fry Cook' }
 console.log(incrementAge(bobObj));
 
+
 // Take an object, make a copy, and increment the age field of the copy. Return the copy.
 function incrementCopyAge(obj){
     const copyObj = {...obj};
+
+    if (copyObj.age){
+        copyObj.age++;
+    }
+    else {
+        copyObj.age = 0;
+    }
+
+    copyObj['update_at'] = new Date();
+
     return copyObj;
 }
+
+const bruceObj = { id: '42', name: 'Bruce', age: 42, job: 'Knight' };
+console.log('Copy and increment age of copy object:')
+console.log(incrementCopyAge(bruceObj));
+console.log('Check orginal object, age has not changed:')
+console.log(bruceObj);
