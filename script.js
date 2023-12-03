@@ -46,6 +46,8 @@ function stringsLongerThan(strArr, num) {
 }
 console.log(stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3))
 
+
+
 // Part 2: Thinking Methodically
 console.log('Part 2: Thinking Methodically')
 
@@ -58,19 +60,57 @@ const testArr = [
 
 
 // USING BUILT-IN ARRAY METHOD
-console.log('Sort the array by age: ')
+console.log('Sort the array by age.')
 testArr.sort((a,b) => a.age - b.age);
 console.log(testArr);
 
 console.log('Filter the array to remove entries with an age greater than 50.')
-let filteredArr = testArr.filter((a) => a.age <= 50);
+const filteredArr = testArr.filter((a) => a.age <= 50);
 console.log(filteredArr);
 
-// Map the array to change the “occupation” key to “job” and increment every age by 1.
+console.log('Map the array to change the “occupation” key to “job” and increment every age by 1.');
+let changedArray = testArr.map((a) => {
+    a.job = a.occupation;
+    delete a.occupation;
+    a.age++; 
+    return a;
+} )
+console.log(changedArray);
+
+console.log('Use the reduce method to calculate the sum of the ages.')
+const totalAge = changedArray.reduce((addedSum, a) => addedSum + a.age, 0);
+console.log(totalAge);
+
+console.log('Then use the result to calculate the average age.')
+let averageAge = totalAge / (changedArray.length);
+console.log(averageAge);
 
 
-// Use the reduce method to calculate the sum of the ages.
-// Then use the result to calculate the average age.
 
+// Part 3: Thinking Critically
+console.log('Part 3: Thinking Critically');
 
-// 
+// Take an object and increment its age field.
+function incrementAge(obj){
+    // if there is age field in the object, then increase by 1
+    if (obj.age) {
+        obj.age++;
+    }
+    else {
+        obj.age = 0;
+    }
+    
+    let updateDataTime = new Date();
+    obj[update_at] = updateDataTime;
+    console.log(obj[update_at]);
+    
+    return obj;
+}
+
+const bobObj = { name: 'Bob', occupation: 'Fry Cook' }
+console.log(incrementAge(bobObj));
+
+// Take an object, make a copy, and increment the age field of the copy. Return the copy.
+function incrementCopyAge(obj){
+
+}
