@@ -100,10 +100,8 @@ function incrementAge(obj){
         obj.age = 0;
     }
     
-    let updateDataTime = new Date();
-    obj[update_at] = updateDataTime;
-    console.log(obj[update_at]);
-    
+    obj['update_at'] = new Date();
+
     return obj;
 }
 
@@ -112,5 +110,6 @@ console.log(incrementAge(bobObj));
 
 // Take an object, make a copy, and increment the age field of the copy. Return the copy.
 function incrementCopyAge(obj){
-
+    const copyObj = {...obj};
+    return copyObj;
 }
